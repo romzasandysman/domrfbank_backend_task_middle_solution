@@ -1,0 +1,55 @@
+{
+  "data": [
+    {
+      "type": "office",
+      "id": 1375,
+      "attributes": {
+        "name": "До «Воздвиженское»",
+        "address": {
+          "city": "Москва",
+          "street": "ул. Воздвиженка",
+          "house": "10",
+          "officeOrApartment": null
+        },
+        "phone": {
+          "countryNumber": "8007758686",
+          "official": "8(800)775-86-86"
+        }
+      }
+    },
+    {
+      "type": "office",
+      "id": 1378,
+      "attributes": {
+        "name": "До «Мира проспект»",
+        "address": {
+          "city": "Воронеж",
+          "street": "пр-т Мира",
+          "house": "12",
+          "officeOrApartment": "2"
+        },
+        "phone": {
+          "countryNumber": "8007758689",
+          "official": "8(800)775-86-89"
+        }
+      }
+    },
+    {
+      "type": "office",
+      "id": 1380,
+      "attributes": {
+        "name": "До «Новое Огарево»",
+        "address": {
+          "city": "Сочи",
+          "street": "пр-т Огарева",
+          "house": "45/2",
+          "officeOrApartment": null
+        },
+        "phone": {
+          "countryNumber": "8007758690",
+          "official": "8(800)775-86-90"
+        }
+      }
+    }
+  ]
+}
