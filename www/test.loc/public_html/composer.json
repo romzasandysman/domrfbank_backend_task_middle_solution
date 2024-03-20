@@ -1,0 +1,20 @@
+{
+  "name": "sandysman/test_conversion_offices_in_to_xml_json",
+  "description": "test task, make from txt file offices, files json and xml",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "sandysman",
+      "email": "sandysman@mail.ri"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "TxtConverter\\": "./sandysman/txt-converter/src"
+    }
+  },
+  "require": {
+    "phpunit/phpunit": "11.*"
+  }
+}

@@ -1,0 +1,32 @@
+version: '3'
+
+networks:
+  app-network:
+    driver: bridge
+    ipam:
+      driver: default
+
+services:
+  nginx:
+    build: ./nginx
+    container_name: nginx_test
+    restart: always
+    ports:
+      - ${NGINX_PORT}:${NGINX_PORT_CONTAINER}
+    volumes:
+      - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
+      - ${NGINX_HOSTS}:${NGINX_HOSTS_CONTAINER}
+    networks:
+      - app-network
+    links:
+      - php8.2
+  php8.2:
+    build: ./php
+    container_name: php
+    restart: always
+    hostname: php
+    volumes:
+      - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
+    working_dir: ${APP_PATH_CONTAINER}
+    networks:
+      - app-network
