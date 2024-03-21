@@ -11,7 +11,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "TxtConverter\\": "./sandysman/txt-converter/src"
+      "OfficesFileConversion\\": "./sandysman/offices-file-conversion/src"
     }
   },
   "require": {
