@@ -1,6 +1,6 @@
 <?php
 
-namespace OfficesFileConversion\Structures;
+namespace OfficesFileConversion\Structures\Types;
 
 /**
  * Поддержка преобразования в строку

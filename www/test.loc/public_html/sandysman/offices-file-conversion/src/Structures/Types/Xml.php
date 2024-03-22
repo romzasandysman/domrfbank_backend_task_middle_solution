@@ -1,11 +1,11 @@
 <?php
 
-namespace OfficesFileConversion\Structures;
+namespace OfficesFileConversion\Structures\Types;
 
 /**
  * Структура офиса реализующая его преобразование в xml формат
  */
-class Xml implements ToString
+class Xml
 {
     public function __toString(): string
     {

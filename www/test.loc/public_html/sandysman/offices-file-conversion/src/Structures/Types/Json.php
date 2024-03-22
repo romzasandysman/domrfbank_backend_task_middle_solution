@@ -1,11 +1,11 @@
 <?php
 
-namespace OfficesFileConversion\Structures;
+namespace OfficesFileConversion\Structures\Types;
 
 /**
  * Структура офиса преобразующая его в формат json
  */
-class Json implements ToString
+class Json
 {
     public function __toString(): string
     {
