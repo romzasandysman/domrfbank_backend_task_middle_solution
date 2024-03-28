@@ -5,7 +5,7 @@ namespace OfficesFileConversion\Parsers\Addresses;
 /**
  * Парсер для строки адреса
  */
-readonly class Address implements AddressParser
+readonly class Address implements FullAddressParser
 {
     /**
      * @param string $address - адрес
@@ -48,5 +48,10 @@ readonly class Address implements AddressParser
     public function getFullName(): string
     {
         return $this->address;
+    }
+
+    public function getShortCutStreetName(): string
+    {
+        // TODO: Implement getShortCutStreetName() method.
     }
 }

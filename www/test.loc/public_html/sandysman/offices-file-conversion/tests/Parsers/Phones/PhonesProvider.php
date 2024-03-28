@@ -30,6 +30,13 @@ trait PhonesProvider
                     "EXPECT_COUNTRY_PHONE"  => "8007758686",
                     "EXPECT_OFFICIAL_PHONE" => "8(800)775-86-86"
                 ]
+            ],
+            [
+                [
+                    "PHONE"                 => "",
+                    "EXPECT_COUNTRY_PHONE"  => "",
+                    "EXPECT_OFFICIAL_PHONE" => ""
+                ]
             ]
         ];
     }
