@@ -1,6 +1,6 @@
 <?php
 
-namespace OfficesFileConversion\Parsers;
+namespace OfficesFileConversion\Parsers\Phones;
 
 /**
  * Интерфейс для реализации парсера телефона

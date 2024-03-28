@@ -1,6 +1,6 @@
 <?php
 
-namespace OfficesFileConversion\Parsers;
+namespace OfficesFileConversion\Parsers\Addresses;
 
 /**
  * Парсер для строки адреса

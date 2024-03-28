@@ -2,8 +2,8 @@
 
 namespace OfficesFileConversion\Structures\Types;
 
-use OfficesFileConversion\Parsers\AddressParser;
-use OfficesFileConversion\Parsers\PhoneParser;
+use OfficesFileConversion\Parsers\Addresses\AddressParser;
+use OfficesFileConversion\Parsers\Phones\PhoneParser;
 
 /**
  * Базовая реализация типа структуры данных для офисов
