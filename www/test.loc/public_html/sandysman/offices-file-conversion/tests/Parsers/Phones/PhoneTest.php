@@ -2,80 +2,56 @@
 
 namespace Parsers\Phones;
 
+use OfficesFileConversion\Parsers\Phones\Phone;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
-require_once "PhonesProvider.php";
-
-final class PhoneTest extends TestCase
+class PhoneTest extends TestCase
 {
     use PhonesProvider;
-
-    /**
-     * Храним паттерны для телефонов
-     */
-    private const PATTERNS = [
-        "RUS_MOBILE_PHONE" => '/\d{1}-\d{3}-\d{3}-\d{2}-\d{2}$/'
-    ];
 
     #[DataProvider('providerOfPhones')]
     public function testGetCountryNumber(array $testPhones)
     {
-        $result = "";
-
-        if ($testPhones["PHONE"]) {
-            foreach ($this->getRulesTransformationForCountryNumbers() as $rule) {
-                if (preg_match($rule["PATTERN"], $testPhones["PHONE"])) {
-                    $result = $rule["TRANSFORMATION"]($testPhones["PHONE"]);
-                    break;
-                }
-            }
-        }
-
-        $this->assertEquals($testPhones["EXPECT_COUNTRY_PHONE"], $result);
+        $this->assertEquals($testPhones["EXPECT_COUNTRY_PHONE"], (new Phone($testPhones["PHONE"]))->getCountryNumber());
     }
 
     #[DataProvider('providerOfPhones')]
     public function testGetOfficialNumber(array $testPhones)
     {
-        $result = "";
-
-        if ($testPhones["PHONE"]) {
-            foreach ($this->getRulesTransformationForOfficialNumbers() as $rule) {
-                if (preg_match($rule["PATTERN"], $testPhones["PHONE"])) {
-                    $result = $rule["TRANSFORMATION"]($testPhones["PHONE"]);
-                    break;
-                }
-            }
-        }
-
-        $this->assertEquals($testPhones["EXPECT_OFFICIAL_PHONE"], $result);
+        $this->assertEquals($testPhones["EXPECT_OFFICIAL_PHONE"], (new Phone($testPhones["PHONE"]))->getOfficialNumber());
     }
 
-    /**
-     * Храним правила преобразования телефонов, для формата страны
-     * @return array[]
-     */
-    private function getRulesTransformationForCountryNumbers(): array
+    public static function providerOfPhones(): array
     {
         return [
             [
-                "PATTERN"        => self::PATTERNS["RUS_MOBILE_PHONE"],
-                "TRANSFORMATION" => fn(string $phone) => substr(str_replace("-", "", $phone), 1),
-            ]
-        ];
-    }
-
-    /**
-     * Храним правила преобразования телефонов, для официального формата
-     * @return array[]
-     */
-    private function getRulesTransformationForOfficialNumbers(): array
-    {
-        return [
+                [
+                    "PHONE"                 => "8-800-775-86-90",
+                    "EXPECT_COUNTRY_PHONE"  => "8007758690",
+                    "EXPECT_OFFICIAL_PHONE" => "8(800)775-86-90"
+                ],
+            ],
             [
-                "PATTERN"        => self::PATTERNS["RUS_MOBILE_PHONE"],
-                "TRANSFORMATION" => fn(string $phone) => preg_replace("/-/", ")", preg_replace("/-/", "(", $phone, 1), 1),
+                [
+                    "PHONE"                 => "8-800-775-86-89",
+                    "EXPECT_COUNTRY_PHONE"  => "8007758689",
+                    "EXPECT_OFFICIAL_PHONE" => "8(800)775-86-89"
+                ],
+            ],
+            [
+                [
+                    "PHONE"                 => "8-800-775-86-86",
+                    "EXPECT_COUNTRY_PHONE"  => "8007758686",
+                    "EXPECT_OFFICIAL_PHONE" => "8(800)775-86-86"
+                ]
+            ],
+            [
+                [
+                    "PHONE"                 => "",
+                    "EXPECT_COUNTRY_PHONE"  => "",
+                    "EXPECT_OFFICIAL_PHONE" => ""
+                ]
             ]
         ];
     }
