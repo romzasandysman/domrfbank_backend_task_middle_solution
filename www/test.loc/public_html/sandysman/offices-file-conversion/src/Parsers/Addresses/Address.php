@@ -16,29 +16,40 @@ readonly class Address implements FullAddressParser
     {
     }
 
+    /**
+     * Получаем название города
+     * @return string
+     */
     public function getCityName(): string
     {
-        // TODO: Implement getCityName() method.
+        if (
+            preg_match(AddressPatternsList::CITY_NAME_PATTERN->value, $this->getFullName(), $addressParts) &&
+            $addressParts[1]
+        ){
+            return $addressParts[1];
+        }
+
+        return "";
     }
 
     public function getStreetName(): string
     {
-        // TODO: Implement getStreetName() method.
+        return "";
     }
 
     public function getHouseNumber(): string
     {
-        // TODO: Implement getHouseNumber() method.
+        return "";
     }
 
     public function getOfficeNumber(): string
     {
-        // TODO: Implement getOfficeNumber() method.
+        return "";
     }
 
     public function getApartmentNumber(): string
     {
-        // TODO: Implement getApartmentNumber() method.
+        return "";
     }
 
     /**
@@ -52,6 +63,6 @@ readonly class Address implements FullAddressParser
 
     public function getShortCutStreetName(): string
     {
-        // TODO: Implement getShortCutStreetName() method.
+        return "";
     }
 }
