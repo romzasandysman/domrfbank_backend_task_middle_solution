@@ -7,7 +7,7 @@ use OfficesFileConversion\BaseInterfaces\GetFullName;
 /**
  * Интерфейс для парсинга адреса
  */
-interface AddressParser
+interface ParserInterface
 {
     /**
      * Получаем название города

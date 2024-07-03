@@ -5,10 +5,15 @@ namespace OfficesFileConversion\Parsers\Addresses;
 /**
  * Храним паттерны для работы с адресом
  */
-enum AddressPatternsList: string
+enum PatternsListEnum: string
 {
     /**
      * Паттерн для получения города
      */
     case CITY_NAME_PATTERN = '/г\.([^\d\s]+)/u';
+
+    /**
+     * Паттерн для получения значения улицы
+     */
+    case STREET_NAME_PATTERN = '/(улица\s+)([а-яА-ЯёЁ\s]*?)(\s+дом)/u';
 }

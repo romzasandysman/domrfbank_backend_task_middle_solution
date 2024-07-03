@@ -2,59 +2,59 @@
 
 namespace Parsers\Addresses;
 
-use OfficesFileConversion\Parsers\Addresses\Address;
+use OfficesFileConversion\Parsers\Addresses\Parser;
 use PHPUnit\Framework\TestCase;
 use \PHPUnit\Framework\Attributes\DataProvider;
 
-class AddressTest extends TestCase
+class ParserTest extends TestCase
 {
     #[DataProvider('providerOfAddress')]
     public function testGetCityName(array $adressProviver)
     {
-        $address = new Address($adressProviver["ADDRESS"]);
+        $address = new Parser($adressProviver["ADDRESS"]);
         $this->assertEquals($adressProviver["CITY_NAME"], $address->getCityName());
     }
 
     #[DataProvider('providerOfAddress')]
     public function testGetStreetName(array $adressProviver)
     {
-        $address = new Address($adressProviver["ADDRESS"]);
+        $address = new Parser($adressProviver["ADDRESS"]);
         $this->assertEquals($adressProviver["STREET_NAME"], $address->getStreetName());
     }
 
     #[DataProvider('providerOfAddress')]
     public function testGetHouseNumber(array $adressProviver)
     {
-        $address = new Address($adressProviver["ADDRESS"]);
+        $address = new Parser($adressProviver["ADDRESS"]);
         $this->assertEquals($adressProviver["HOUSE_NUMBER"], $address->getHouseNumber());
     }
 
     #[DataProvider('providerOfAddress')]
     public function testGetOfficeNumber(array $adressProviver)
     {
-        $address = new Address($adressProviver["ADDRESS"]);
+        $address = new Parser($adressProviver["ADDRESS"]);
         $this->assertEquals($adressProviver["OFFICE_NUMBER"], $address->getOfficeNumber());
     }
 
     #[DataProvider('providerOfAddress')]
     public function testGetApartmentNumber(array $adressProviver)
     {
-        $address = new Address($adressProviver["ADDRESS"]);
+        $address = new Parser($adressProviver["ADDRESS"]);
         $this->assertEquals($adressProviver["APARTMENT_NUMBER"], $address->getApartmentNumber());
     }
 
     #[DataProvider('providerOfAddress')]
-    public function testGetFullAddress(array $adressProviver)
+    public function testGetFullParser(array $adressProviver)
     {
-        $address = new Address($adressProviver["ADDRESS"]);
+        $address = new Parser($adressProviver["ADDRESS"]);
         $this->assertEquals($adressProviver["ADDRESS"], $address->getFullName());
     }
 
     #[DataProvider('providerOfAddress')]
-    public function testGetShortCutStreetName(array $adressProviver)
+    public function testGetShortFormatedStreetName(array $adressProviver)
     {
-        $address = new Address($adressProviver["ADDRESS"]);
-        $this->assertEquals($adressProviver["SHORTCUT_STREET_NAME"], $address->getShortCutStreetName());
+        $address = new Parser($adressProviver["ADDRESS"]);
+        $this->assertEquals($adressProviver["SHORTCUT_STREET_NAME"], $address->getShortFormatedStreetName());
     }
 
     public static function providerOfAddress(): array
@@ -68,7 +68,7 @@ class AddressTest extends TestCase
                     "HOUSE_NUMBER"          => "10",
                     "OFFICE_NUMBER"         => "",
                     "APARTMENT_NUMBER"      => "",
-                    "SHORTCUT_STREET_NAME"  => "",
+                    "SHORTCUT_STREET_NAME"  => "ул. Воздвиженка",
                 ],
             ],
             [

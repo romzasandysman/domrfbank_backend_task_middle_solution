@@ -5,11 +5,11 @@ namespace OfficesFileConversion\Parsers\Addresses;
 /**
  * Интерфейс для реализации коротких форматов адресов
  */
-interface ShortsFormatsAddressParser
+interface ShortsFormatsParserInterface
 {
     /**
-     * Получаем короткое название улицы
+     * Получаем название улицы в коротком представлении
      * @return string
      */
-    public function getShortCutStreetName(): string;
+    public function getShortFormatedStreetName(): string;
 }

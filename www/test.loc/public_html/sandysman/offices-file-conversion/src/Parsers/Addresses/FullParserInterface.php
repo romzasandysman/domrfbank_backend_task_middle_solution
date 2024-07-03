@@ -5,7 +5,7 @@ namespace OfficesFileConversion\Parsers\Addresses;
 /**
  * Интерфейс для реализации полного парсера адреса
  */
-interface FullAddressParser extends AddressParser, ShortsFormatsAddressParser
+interface FullParserInterface extends ParserInterface, ShortsFormatsParserInterface
 {
 
 }
