@@ -16,4 +16,9 @@ enum PatternsListEnum: string
      * Паттерн для получения значения улицы
      */
     case STREET_NAME_PATTERN = '/(улица\s+)([а-яА-ЯёЁ\s]*?)(\s+дом)/u';
+
+    /**
+     * Паттерн на получение номера дома
+     */
+    case HOUSE_PATTERN = "/(дом\s+)(\d+)(\/(\d+))?/i";
 }

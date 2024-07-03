@@ -47,8 +47,19 @@ readonly class Parser implements FullParserInterface
         return "";
     }
 
+    /**
+     * Получаем номер дома
+     * @return string
+     */
     public function getHouseNumber(): string
     {
+        if (
+            preg_match(PatternsListEnum::HOUSE_PATTERN->value, $this->getFullName(), $addressParts) &&
+            $addressParts[2]
+        ){
+            return $addressParts[2] . $addressParts[3];
+        }
+
         return "";
     }
 
