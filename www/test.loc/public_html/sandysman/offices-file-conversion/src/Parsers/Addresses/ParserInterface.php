@@ -2,12 +2,12 @@
 
 namespace OfficesFileConversion\Parsers\Addresses;
 
-use OfficesFileConversion\BaseInterfaces\GetFullName;
+use OfficesFileConversion\BaseInterfaces\GetFullNameInterface;
 
 /**
  * Интерфейс для парсинга адреса
  */
-interface ParserInterface
+interface ParserInterface extends GetFullNameInterface
 {
     /**
      * Получаем название города

@@ -5,7 +5,7 @@ namespace OfficesFileConversion\BaseInterfaces;
 /**
  * Интерфейс для получения полного имени
  */
-interface GetFullName
+interface GetFullNameInterface
 {
     /**
      * Получаем полное имя
