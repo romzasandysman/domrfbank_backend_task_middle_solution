@@ -5,15 +5,8 @@ namespace OfficesFileConversion\Parsers\Phones;
 /**
  * Парсер телефона
  */
-class Phone implements PhoneParser
+class Parser implements ParserInterface
 {
-    /**
-     * Храним паттерны для телефонов
-     */
-    private const PATTERNS = [
-        "RUS_MOBILE_PHONE" => '/\d{1}-\d{3}-\d{3}-\d{2}-\d{2}$/'
-    ];
-
     /**
      * @var array - храним уже отформатированные телефоны
      */
@@ -75,7 +68,7 @@ class Phone implements PhoneParser
     {
         return [
             [
-                "PATTERN"        => self::PATTERNS["RUS_MOBILE_PHONE"],
+                "PATTERN"        => PatternsListEnum::RUS_MOBILE_PHONE->value,
                 "TRANSFORMATION" => fn(string $phone) => substr(str_replace("-", "", $phone), 1),
             ]
         ];
@@ -89,7 +82,7 @@ class Phone implements PhoneParser
     {
         return [
             [
-                "PATTERN"        => self::PATTERNS["RUS_MOBILE_PHONE"],
+                "PATTERN"        => PatternsListEnum::RUS_MOBILE_PHONE->value,
                 "TRANSFORMATION" => fn(string $phone) => preg_replace("/-/", ")", preg_replace("/-/", "(", $phone, 1), 1),
             ]
         ];

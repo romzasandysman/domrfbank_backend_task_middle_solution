@@ -5,7 +5,7 @@ namespace OfficesFileConversion\Parsers\Phones;
 /**
  * Интерфейс для реализации парсера телефона
  */
-interface PhoneParser
+interface ParserInterface
 {
     /**
      * Получаем номер в формате страны
