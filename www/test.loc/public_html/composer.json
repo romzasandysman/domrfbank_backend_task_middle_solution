@@ -1,6 +1,6 @@
 {
   "name": "sandysman/test_conversion_offices_in_to_xml_json",
-  "description": "test task, make from txt file offices, files json and xml",
+  "description": "test task, make from txt file offices, files json and xml with offices data",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
@@ -15,6 +15,7 @@
     }
   },
   "require": {
-    "phpunit/phpunit": "11.*"
+    "phpunit/phpunit": "11.*",
+    "symfony/dependency-injection": "7.*"
   }
 }
