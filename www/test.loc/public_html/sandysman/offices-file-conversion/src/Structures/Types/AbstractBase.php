@@ -2,13 +2,13 @@
 
 namespace OfficesFileConversion\Structures\Types;
 
-use OfficesFileConversion\Parsers\Addresses\AddressParser;
-use OfficesFileConversion\Parsers\Phones\PhoneParser;
+use OfficesFileConversion\Parsers\Addresses\Parser as AddressParser;
+use OfficesFileConversion\Parsers\Phones\Parser as PhoneParser;
 
 /**
  * Базовая реализация типа структуры данных для офисов
  */
-abstract readonly class Base implements ToString
+abstract class AbstractBase
 {
     /**
      * @param int $id                       - id офиса

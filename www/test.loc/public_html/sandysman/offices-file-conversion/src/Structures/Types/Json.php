@@ -5,9 +5,10 @@ namespace OfficesFileConversion\Structures\Types;
 /**
  * Структура офиса преобразующая его в формат json
  */
-class Json
+class Json extends AbstractBase implements \JsonSerializable
 {
-    public function __toString(): string
+    public function jsonSerialize(): mixed
     {
+        // TODO: Implement jsonSerialize() method.
     }
 }
