@@ -1,6 +1,6 @@
 <?php
 
-$autoloaderPath = __DIR__ . '/../../../vendor/autoload.php';
+$autoloaderPath = __DIR__ . '/../vendor/autoload.php';
 $composer       = file_exists($autoloaderPath);
 
 if (!$composer){

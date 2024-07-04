@@ -1,6 +1,6 @@
 <?php
 
-namespace OfficesFileConversion\Parsers\Addresses;
+namespace SandysMan\OfficesFileConversion\Parsers\Addresses;
 
 /**
  * Храним паттерны для работы с адресом

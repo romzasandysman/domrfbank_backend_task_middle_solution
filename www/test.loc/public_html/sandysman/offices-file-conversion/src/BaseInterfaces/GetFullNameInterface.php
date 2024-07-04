@@ -1,6 +1,6 @@
 <?php
 
-namespace OfficesFileConversion\BaseInterfaces;
+namespace SandysMan\OfficesFileConversion\BaseInterfaces;
 
 /**
  * Интерфейс для получения полного имени

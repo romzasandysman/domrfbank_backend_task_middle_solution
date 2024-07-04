@@ -1,8 +1,8 @@
 <?php
 
-namespace OfficesFileConversion\Parsers\Addresses;
+namespace SandysMan\OfficesFileConversion\Parsers\Addresses;
 
-use OfficesFileConversion\BaseInterfaces\GetFullNameInterface;
+use SandysMan\OfficesFileConversion\BaseInterfaces\GetFullNameInterface;
 
 /**
  * Интерфейс для парсинга адреса

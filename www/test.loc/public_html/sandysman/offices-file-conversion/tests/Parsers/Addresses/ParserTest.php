@@ -1,8 +1,8 @@
 <?php
 
-namespace Parsers\Addresses;
+namespace SandysMan\OfficesFileConversion\Parsers\Addresses;
 
-use OfficesFileConversion\Parsers\Addresses\Parser;
+use SandysMan\OfficesFileConversion\Parsers\Addresses\Parser;
 use PHPUnit\Framework\TestCase;
 use \PHPUnit\Framework\Attributes\DataProvider;
 

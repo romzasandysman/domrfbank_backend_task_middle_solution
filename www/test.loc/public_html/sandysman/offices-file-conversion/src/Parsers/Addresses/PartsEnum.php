@@ -1,6 +1,6 @@
 <?php
 
-namespace OfficesFileConversion\Parsers\Addresses;
+namespace SandysMan\OfficesFileConversion\Parsers\Addresses;
 
 /**
  * Части из которых может состоять адрес

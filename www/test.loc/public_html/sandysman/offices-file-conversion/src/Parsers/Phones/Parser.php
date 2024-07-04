@@ -1,6 +1,6 @@
 <?php
 
-namespace OfficesFileConversion\Parsers\Phones;
+namespace SandysMan\OfficesFileConversion\Parsers\Phones;
 
 /**
  * Парсер телефона

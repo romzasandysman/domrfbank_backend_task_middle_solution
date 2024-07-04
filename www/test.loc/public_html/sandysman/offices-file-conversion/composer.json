@@ -6,13 +6,18 @@
   "authors": [
     {
       "name": "sandysman",
-      "email": "sandysman@mail.ri"
+      "email": "sandysman@mail.ru"
     }
   ],
   "autoload": {
-    "psr-4": {
-      "OfficesFileConversion\\": "./sandysman/offices-file-conversion/src"
-    }
+    "classmap": [
+      "src/"
+    ]
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/"
+    ]
   },
   "require": {
     "phpunit/phpunit": "11.*",

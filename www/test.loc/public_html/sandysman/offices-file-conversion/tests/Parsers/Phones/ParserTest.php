@@ -1,8 +1,8 @@
 <?php
 
-namespace Parsers\Phones;
+namespace SandysMan\OfficesFileConversion\Parsers\Phones;
 
-use OfficesFileConversion\Parsers\Phones\Parser;
+use SandysMan\OfficesFileConversion\Parsers\Phones\Parser;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

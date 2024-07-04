@@ -1,6 +1,6 @@
 <?php
 
-namespace OfficesFileConversion\Structures\Types;
+namespace SandysMan\OfficesFileConversion\Structures\Types;
 
 /**
  * Структура офиса реализующая его преобразование в xml формат

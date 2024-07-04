@@ -1,6 +1,6 @@
 <?php
 
-namespace OfficesFileConversion\Structures\Collections;
+namespace SandysMan\OfficesFileConversion\Structures\Collections;
 
 class XmlCollection
 {

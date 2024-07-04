@@ -1,3 +1,5 @@
 .idea
 www/test.loc/public_html/vendor/*
 /www/test.loc/public_html/sandysman/offices-file-conversion/tests/.phpunit.result.cache
+/www/test.loc/public_html/sandysman/offices-file-conversion/vendor/
+/www/test.loc/public_html/sandysman/offices-file-conversion/composer.lock

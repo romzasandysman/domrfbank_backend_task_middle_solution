@@ -1,6 +1,6 @@
 <?php
 
-namespace OfficesFileConversion\Structures\Types;
+namespace SandysMan\OfficesFileConversion\Structures\Types;
 
 use OfficesFileConversion\Parsers\Addresses\Parser as AddressParser;
 use OfficesFileConversion\Parsers\Phones\Parser as PhoneParser;
@@ -23,5 +23,50 @@ abstract class AbstractBase
         private PhoneParser $phoneParser
     )
     {
+    }
+
+    /**
+     * Получаем имя офиса
+     * @return string
+     */
+    protected function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * Получаем объект парсера адреса
+     * @return AddressParser
+     */
+    protected function getAddressParser(): AddressParser
+    {
+        return $this->addressParser;
+    }
+
+    /**
+     * Получаем объект парсера телефона
+     * @return PhoneParser
+     */
+    protected function getPhoneParser(): PhoneParser
+    {
+        return $this->phoneParser;
+    }
+
+    /**
+     * Получаем id офиса
+     * @return int
+     */
+    protected function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * Получаем тип данных для офиса
+     * @return string
+     */
+    protected function getType(): string
+    {
+        return TypesEnum::OFFICE->value;
     }
 }
