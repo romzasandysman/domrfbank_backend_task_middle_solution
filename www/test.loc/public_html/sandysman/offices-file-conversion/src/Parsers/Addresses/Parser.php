@@ -38,13 +38,7 @@ readonly class Parser implements FullParserInterface
      */
     public function getStreetName(): string
     {
-        if (
-            preg_match(PatternsListEnum::STREET_NAME_PATTERN->value, $this->getFullName(), $addressParts) &&
-            $addressParts[2]
-        ){
-            return $addressParts[2];
-        }
-        return "";
+        return $this->getSecondPartOfRegularPatternFromFullName(PatternsListEnum::STREET_NAME_PATTERN->value);
     }
 
     /**
@@ -63,14 +57,35 @@ readonly class Parser implements FullParserInterface
         return "";
     }
 
+    /**
+     * Получаем номер офиса
+     * @return string
+     */
     public function getOfficeNumber(): string
     {
-        return "";
+        return $this->getSecondPartOfRegularPatternFromFullName(PatternsListEnum::OFFICE_PATTERN->value);
     }
 
+    /**
+     * Получаем номер офиса с префиксом офис
+     * @return string
+     */
+    public function getFullOfficeNumber(): string
+    {
+       if ($officeNumber = $this->getOfficeNumber()) {
+           return PartsEnum::FULL_OFFICE_TEXT->value . " " . $officeNumber;
+       }
+
+       return "";
+    }
+
+    /**
+     * Получаем номер апартаментов
+     * @return string
+     */
     public function getApartmentNumber(): string
     {
-        return "";
+        return $this->getSecondPartOfRegularPatternFromFullName(PatternsListEnum::APARTMENTS_PATTERN->value);
     }
 
     /**
@@ -99,5 +114,22 @@ readonly class Parser implements FullParserInterface
        }
        
        return "";
+    }
+
+    /**
+     * Получаем вторую часть по регулярному выражению из полного адреса
+     * @param string $pattern
+     * @return string
+     */
+    private function getSecondPartOfRegularPatternFromFullName(string $pattern): string
+    {
+        if (
+            preg_match($pattern, $this->getFullName(), $addressParts) &&
+            $addressParts[2]
+        ){
+            return $addressParts[2];
+        }
+
+        return "";
     }
 }

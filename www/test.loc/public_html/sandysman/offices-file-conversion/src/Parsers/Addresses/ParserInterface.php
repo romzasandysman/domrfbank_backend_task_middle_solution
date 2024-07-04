@@ -34,6 +34,12 @@ interface ParserInterface extends GetFullNameInterface
     public function getOfficeNumber(): string;
 
     /**
+     * Получаем номер офиса с префиксом офис
+     * @return string
+     */
+    public function getFullOfficeNumber(): string;
+
+    /**
      * Получаем номер апартаментов
      * @return string
      */

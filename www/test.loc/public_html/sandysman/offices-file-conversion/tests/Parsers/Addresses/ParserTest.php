@@ -37,6 +37,13 @@ class ParserTest extends TestCase
     }
 
     #[DataProvider('providerOfAddress')]
+    public function testGetFullOfficeNumber(array $adressProviver)
+    {
+        $address = new Parser($adressProviver["ADDRESS"]);
+        $this->assertEquals($adressProviver["FULL_OFFICE_NUMBER"], $address->getFullOfficeNumber());
+    }
+
+    #[DataProvider('providerOfAddress')]
     public function testGetApartmentNumber(array $adressProviver)
     {
         $address = new Parser($adressProviver["ADDRESS"]);
@@ -67,6 +74,7 @@ class ParserTest extends TestCase
                     "STREET_NAME"           => "Воздвиженка",
                     "HOUSE_NUMBER"          => "10",
                     "OFFICE_NUMBER"         => "",
+                    "FULL_OFFICE_NUMBER"    => "",
                     "APARTMENT_NUMBER"      => "",
                     "SHORTCUT_STREET_NAME"  => "ул. Воздвиженка",
                 ],
@@ -79,6 +87,7 @@ class ParserTest extends TestCase
                     "SHORTCUT_STREET_NAME"  => "пр-т Мира",
                     "HOUSE_NUMBER"          => "12",
                     "OFFICE_NUMBER"         => "2",
+                    "FULL_OFFICE_NUMBER"    => "офис 2",
                     "APARTMENT_NUMBER"      => "",
                 ],
             ],
@@ -90,6 +99,7 @@ class ParserTest extends TestCase
                     "SHORTCUT_STREET_NAME"  => "пр-т Огарева",
                     "HOUSE_NUMBER"          => "45/2",
                     "OFFICE_NUMBER"         => "",
+                    "FULL_OFFICE_NUMBER"    => "",
                     "APARTMENT_NUMBER"      => "",
                 ]
             ],
@@ -100,6 +110,7 @@ class ParserTest extends TestCase
                     "STREET_NAME"           => "",
                     "HOUSE_NUMBER"          => "",
                     "OFFICE_NUMBER"         => "",
+                    "FULL_OFFICE_NUMBER"    => "",
                     "APARTMENT_NUMBER"      => "",
                     "SHORTCUT_STREET_NAME"  => ""
                 ]
@@ -112,7 +123,20 @@ class ParserTest extends TestCase
                     "SHORTCUT_STREET_NAME"  => "пр-т Огарева",
                     "HOUSE_NUMBER"          => "45/2",
                     "OFFICE_NUMBER"         => "",
+                    "FULL_OFFICE_NUMBER"    => "",
                     "APARTMENT_NUMBER"      => "",
+                ]
+            ],
+            [
+                [
+                    "ADDRESS"               => "г.344433 улица проспект Огарева дом 45/2 апартаменты 23",
+                    "CITY_NAME"             => "",
+                    "STREET_NAME"           => "проспект Огарева",
+                    "SHORTCUT_STREET_NAME"  => "пр-т Огарева",
+                    "HOUSE_NUMBER"          => "45/2",
+                    "OFFICE_NUMBER"         => "",
+                    "FULL_OFFICE_NUMBER"    => "",
+                    "APARTMENT_NUMBER"      => "23",
                 ]
             ]
         ];

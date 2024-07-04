@@ -21,4 +21,9 @@ enum PartsEnum: string
      * Коротки вариант написания улицы
      */
     case SHORT_STREET_TEXT = "ул.";
+
+    /**
+     * Полный вариант надписи офис
+     */
+    case FULL_OFFICE_TEXT = "офис";
 }

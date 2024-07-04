@@ -21,4 +21,14 @@ enum PatternsListEnum: string
      * Паттерн на получение номера дома
      */
     case HOUSE_PATTERN = "/(дом\s+)(\d+)(\/(\d+))?/i";
+
+    /**
+     * Паттерн на получение номера офиса
+     */
+    case OFFICE_PATTERN = "/(офис\s+)(\d+)/i";
+
+    /**
+     * Паттерн на получение номера аппартаментов
+     */
+    case APARTMENTS_PATTERN = "/(апартаменты\s+)(\d+)/i";
 }
